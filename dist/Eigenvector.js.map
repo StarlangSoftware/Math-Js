@@ -1,0 +1,1 @@
+{"version":3,"file":"Eigenvector.js","sourceRoot":"","sources":["../source/Eigenvector.ts"],"names":[],"mappings":";;;;;;;;;;;;IAAA,qCAAgC;IAEhC,MAAa,WAAY,SAAQ,eAAM;QAInC;;;;;;;WAOG;QACH,YAAY,UAAkB,EAAE,MAAqB;YACjD,KAAK,CAAC,MAAM,CAAC,CAAC;YACd,IAAI,CAAC,UAAU,GAAG,UAAU,CAAA;QAChC,CAAC;QAED;;;;WAIG;QACH,aAAa;YACT,OAAO,IAAI,CAAC,UAAU,CAAA;QAC1B,CAAC;KACJ;IAzBD,kCAyBC"}
