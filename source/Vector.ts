@@ -210,7 +210,7 @@ export class Vector {
      * @param v Vector to find difference from values {@link Array}.
      * @return new {@link Vector} with result {@link Array}.
      */
-    difference(v: Vector){
+    difference(v: Vector): Vector{
         const result: Array<number> = [];
         for (let i = 0; i < this._size; i++) {
             result.push(this.values[i] - v.values[i])
@@ -294,7 +294,7 @@ export class Vector {
      * @return Vector result.
      */
     product(value: number): Vector{
-        var result : Vector = new Vector(0, 0)
+        const result: Vector = new Vector(0, 0);
         for (let i = 0; i < this._size; i++) {
             result.add(this.values[i] * value)
         }

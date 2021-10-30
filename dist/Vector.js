@@ -285,7 +285,7 @@
          * @return Vector result.
          */
         product(value) {
-            var result = new Vector(0, 0);
+            const result = new Vector(0, 0);
             for (let i = 0; i < this._size; i++) {
                 result.add(this.values[i] * value);
             }

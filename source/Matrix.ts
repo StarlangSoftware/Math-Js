@@ -287,7 +287,7 @@ export class Matrix{
      * @return Vector that holds column sum.
      */
     sumOfRows(): Vector{
-        var result : Vector = new Vector(0, 0.0)
+        let result: Vector = new Vector(0, 0.0);
         for (let i = 0; i < this.col; i++) {
             result.add(this.columnSum(i))
         }
@@ -605,16 +605,16 @@ export class Matrix{
     }
 
     /**
-     * The characteristics method finds and returns a sorted {@link ArrayList} of {@link Eigenvector}s.
+     * The characteristics method finds and returns a sorted {@link Array} of {@link Eigenvector}s.
      *
-     * @return a sorted {@link ArrayList} of {@link Eigenvector}s.
+     * @return a sorted {@link Array} of {@link Eigenvector}s.
      */
     characteristics(): Array<Eigenvector>{
         let matrix1 = this.clone()
         let v = new Matrix(this.row, this.row)
-        var d : Array<number> = []
-        var b : Array<number> = []
-        var z : Array<number> = []
+        let d: Array<number> = [];
+        let b: Array<number> = [];
+        let z: Array<number> = [];
         let EPS = 0.000000000000000001
         for (let ip = 0; ip < this.row; ip++) {
             for (let iq = 0; iq < this.row; iq++) {

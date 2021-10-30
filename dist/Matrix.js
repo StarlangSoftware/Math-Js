@@ -280,7 +280,7 @@
          * @return Vector that holds column sum.
          */
         sumOfRows() {
-            var result = new Vector_1.Vector(0, 0.0);
+            let result = new Vector_1.Vector(0, 0.0);
             for (let i = 0; i < this.col; i++) {
                 result.add(this.columnSum(i));
             }
@@ -587,16 +587,16 @@
             this.values[k][l] = h + s * (g - h * tau);
         }
         /**
-         * The characteristics method finds and returns a sorted {@link ArrayList} of {@link Eigenvector}s.
+         * The characteristics method finds and returns a sorted {@link Array} of {@link Eigenvector}s.
          *
-         * @return a sorted {@link ArrayList} of {@link Eigenvector}s.
+         * @return a sorted {@link Array} of {@link Eigenvector}s.
          */
         characteristics() {
             let matrix1 = this.clone();
             let v = new Matrix(this.row, this.row);
-            var d = [];
-            var b = [];
-            var z = [];
+            let d = [];
+            let b = [];
+            let z = [];
             let EPS = 0.000000000000000001;
             for (let ip = 0; ip < this.row; ip++) {
                 for (let iq = 0; iq < this.row; iq++) {

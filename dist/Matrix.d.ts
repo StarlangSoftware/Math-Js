@@ -232,9 +232,9 @@ export declare class Matrix {
      */
     private rotate;
     /**
-     * The characteristics method finds and returns a sorted {@link ArrayList} of {@link Eigenvector}s.
+     * The characteristics method finds and returns a sorted {@link Array} of {@link Eigenvector}s.
      *
-     * @return a sorted {@link ArrayList} of {@link Eigenvector}s.
+     * @return a sorted {@link Array} of {@link Eigenvector}s.
      */
     characteristics(): Array<Eigenvector>;
 }
