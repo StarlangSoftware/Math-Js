@@ -1,6 +1,7 @@
 import * as assert from "assert";
 import {Vector} from "../dist/Vector";
 import {Matrix} from "../dist/Matrix";
+import {Random} from "nlptoolkit-util/dist/Random";
 
 function nearlyEqual(value1: number, value2: number, difference: number) {
     assert.ok(Math.abs(value1 - value2) < difference)
@@ -29,7 +30,7 @@ describe('MatrixTest', function() {
         }
         let V = new Vector(1000, 1.0)
         let vr = new Vector(100, 1.0)
-        let random = new Matrix(100, 100, 1, 10)
+        let random = new Matrix(100, 100, 1, 10, new Random(0))
         let originalSum = random.sumOfElements()
         let identity = new Matrix(100)
         it('testColumnWiseNormalize', function() {

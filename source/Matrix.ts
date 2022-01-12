@@ -1,5 +1,6 @@
 import {Vector} from "./Vector";
 import {Eigenvector} from "./Eigenvector";
+import {Random} from "nlptoolkit-util/dist/Random";
 
 export class Matrix{
 
@@ -7,7 +8,7 @@ export class Matrix{
     private readonly col: number
     private values: Array<Array<number>>
 
-    constructor(row: any, col: any = undefined, minValue: any = undefined, maxValue: any = undefined) {
+    constructor(row: any, col?: any, minValue?: any, maxValue?: any, random?: Random) {
         if (typeof row == 'number'){
             this.row = row
             if (col != undefined){
@@ -25,7 +26,11 @@ export class Matrix{
                         for (let i = 0; i < this.row; i++){
                             this.values.push(new Array<number>())
                             for (let j = 0; j < this.col; j++){
-                                this.values[i].push(minValue + (maxValue - minValue) * Math.random());
+                                if (random != undefined){
+                                    this.values[i].push(random.nextDouble(minValue, maxValue));
+                                } else {
+                                    this.values[i].push(minValue + (maxValue - minValue) * Math.random());
+                                }
                             }
                         }
                     }

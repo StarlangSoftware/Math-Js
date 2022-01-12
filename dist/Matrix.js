@@ -13,7 +13,7 @@
     const Vector_1 = require("./Vector");
     const Eigenvector_1 = require("./Eigenvector");
     class Matrix {
-        constructor(row, col = undefined, minValue = undefined, maxValue = undefined) {
+        constructor(row, col, minValue, maxValue, random) {
             if (typeof row == 'number') {
                 this.row = row;
                 if (col != undefined) {
@@ -33,7 +33,12 @@
                             for (let i = 0; i < this.row; i++) {
                                 this.values.push(new Array());
                                 for (let j = 0; j < this.col; j++) {
-                                    this.values[i].push(minValue + (maxValue - minValue) * Math.random());
+                                    if (random != undefined) {
+                                        this.values[i].push(random.nextDouble(minValue, maxValue));
+                                    }
+                                    else {
+                                        this.values[i].push(minValue + (maxValue - minValue) * Math.random());
+                                    }
                                 }
                             }
                         }

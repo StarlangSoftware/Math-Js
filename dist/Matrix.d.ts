@@ -1,10 +1,11 @@
 import { Vector } from "./Vector";
 import { Eigenvector } from "./Eigenvector";
+import { Random } from "nlptoolkit-util/dist/Random";
 export declare class Matrix {
     private readonly row;
     private readonly col;
     private values;
-    constructor(row: any, col?: any, minValue?: any, maxValue?: any);
+    constructor(row: any, col?: any, minValue?: any, maxValue?: any, random?: Random);
     initZeros(): void;
     /**
      * The getter for the index at given rowNo and colNo of values {@link Array}.
