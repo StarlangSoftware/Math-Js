@@ -45,6 +45,7 @@
                 if (this.get(item) == 0) {
                     this.delete(item);
                 }
+                this.sum--;
             }
         }
         /**

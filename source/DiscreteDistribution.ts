@@ -36,6 +36,7 @@ export class DiscreteDistribution extends Map<string, number>{
             if (this.get(item) == 0){
                 this.delete(item)
             }
+            this.sum--
         }
     }
 

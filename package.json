@@ -1,6 +1,6 @@
 {
   "name": "nlptoolkit-math",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Math library",
   "main": "index.js",
   "types": "index.js",
