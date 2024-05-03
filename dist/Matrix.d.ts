@@ -5,7 +5,21 @@ export declare class Matrix {
     private readonly row;
     private readonly col;
     private values;
+    /**
+     * Another constructor of Matrix class which takes row, column, minimum and maximum values as inputs.
+     * First it creates new values array with given row and column numbers. Then fills in the
+     * positions with random numbers using minimum and maximum inputs.
+     *
+     * @param row is used to create matrix.
+     * @param col is used to create matrix.
+     * @param minValue minimum value.
+     * @param maxValue maximum value.
+     * @param random random function to set the random values in the matrix.
+     */
     constructor(row: any, col?: any, minValue?: any, maxValue?: any, random?: Random);
+    /**
+     * Initializes the values of the matrix to 0.
+     */
     initZeros(): void;
     /**
      * The getter for the index at given rowNo and colNo of values {@link Array}.

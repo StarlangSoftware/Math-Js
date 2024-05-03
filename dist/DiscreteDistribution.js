@@ -201,6 +201,10 @@
                 return 0.0;
             }
         }
+        /**
+         * Returns the distribution as a probability distribution
+         * @return Probability distribution
+         */
         getProbabilityDistribution() {
             const result = new Map();
             for (const item of this.keys()) {

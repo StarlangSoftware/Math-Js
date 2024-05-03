@@ -91,6 +91,10 @@ export declare class DiscreteDistribution extends Map<string, number> {
      * @return the probability to which the specified item is mapped.
      */
     getProbability(item: string): number;
+    /**
+     * Returns the distribution as a probability distribution
+     * @return Probability distribution
+     */
     getProbabilityDistribution(): Map<string, number>;
     /**
      * The getProbabilityLaplaceSmoothing method takes an item as an input returns the smoothed value to which the specified

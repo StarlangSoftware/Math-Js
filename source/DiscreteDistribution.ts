@@ -199,6 +199,10 @@ export class DiscreteDistribution extends Map<string, number>{
         }
     }
 
+    /**
+     * Returns the distribution as a probability distribution
+     * @return Probability distribution
+     */
     getProbabilityDistribution(): Map<string, number> {
         const result: Map<string, number> = new Map<string, number>();
         for (const item of this.keys()){

@@ -13,6 +13,17 @@
     const Vector_1 = require("./Vector");
     const Eigenvector_1 = require("./Eigenvector");
     class Matrix {
+        /**
+         * Another constructor of Matrix class which takes row, column, minimum and maximum values as inputs.
+         * First it creates new values array with given row and column numbers. Then fills in the
+         * positions with random numbers using minimum and maximum inputs.
+         *
+         * @param row is used to create matrix.
+         * @param col is used to create matrix.
+         * @param minValue minimum value.
+         * @param maxValue maximum value.
+         * @param random random function to set the random values in the matrix.
+         */
         constructor(row, col, minValue, maxValue, random) {
             if (typeof row == 'number') {
                 this.row = row;
@@ -65,6 +76,9 @@
                 }
             }
         }
+        /**
+         * Initializes the values of the matrix to 0.
+         */
         initZeros() {
             this.values = new Array();
             for (let i = 0; i < this.row; i++) {
