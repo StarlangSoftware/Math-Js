@@ -71,6 +71,7 @@ export class Vector {
      */
     remove(pos: number){
         this.values.splice(pos, 1)
+        this._size--;
     }
 
     /**

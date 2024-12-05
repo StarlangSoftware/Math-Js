@@ -78,6 +78,7 @@
          */
         remove(pos) {
             this.values.splice(pos, 1);
+            this._size--;
         }
         /**
          * The clear method sets all the elements of values {@link Array} to 0.0.
