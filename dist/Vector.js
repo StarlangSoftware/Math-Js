@@ -13,30 +13,44 @@
     class Vector {
         constructor(valuesOrSize = undefined, initial = undefined, index = undefined) {
             if (valuesOrSize == undefined) {
-                this.values = [];
-                this._size = 0;
+                this.constructor1();
             }
             else {
                 if (Array.isArray(valuesOrSize)) {
-                    this.values = valuesOrSize;
-                    this._size = valuesOrSize.length;
+                    this.constructor2(valuesOrSize);
                 }
                 else {
-                    this._size = valuesOrSize;
-                    this.values = [];
                     if (index == undefined) {
-                        for (let i = 0; i < this._size; i++) {
-                            this.values.push(initial);
-                        }
+                        this.constructor3(valuesOrSize, initial);
                     }
                     else {
-                        for (let i = 0; i < this._size; i++) {
-                            this.values.push(0.0);
-                        }
-                        this.values[index] = initial;
+                        this.constructor4(valuesOrSize, initial, index);
                     }
                 }
             }
+        }
+        constructor1() {
+            this.values = [];
+            this._size = 0;
+        }
+        constructor2(values) {
+            this.values = values;
+            this._size = values.length;
+        }
+        constructor3(size, initial) {
+            this._size = size;
+            this.values = [];
+            for (let i = 0; i < this._size; i++) {
+                this.values.push(initial);
+            }
+        }
+        constructor4(size, initial, index) {
+            this._size = size;
+            this.values = [];
+            for (let i = 0; i < this._size; i++) {
+                this.values.push(0.0);
+            }
+            this.values[index] = initial;
         }
         /**
          * The biased method creates a {@link Vector} result, add adds each item of values {@link Array} into the result Vector.

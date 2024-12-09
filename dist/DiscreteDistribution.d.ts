@@ -80,6 +80,7 @@ export declare class DiscreteDistribution extends Map<string, number> {
     /**
      * The getMaxItem method loops through the entries and gets the entry with maximum value.
      *
+     * @param includeTheseOnly If the array is not null, only items in this array are considered
      * @return the entry with maximum value.
      */
     getMaxItem(includeTheseOnly?: Array<string>): string;

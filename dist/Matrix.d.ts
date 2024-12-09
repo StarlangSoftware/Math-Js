@@ -2,9 +2,14 @@ import { Vector } from "./Vector";
 import { Eigenvector } from "./Eigenvector";
 import { Random } from "nlptoolkit-util/dist/Random";
 export declare class Matrix {
-    private readonly row;
-    private readonly col;
+    private row;
+    private col;
     private values;
+    constructor1(row: number): void;
+    constructor2(row: number, col: number): void;
+    constructor3(row: number, col: number, minValue: number): void;
+    constructor4(row: number, col: number, minValue: number, maxValue: number, random?: Random): void;
+    constructor5(row: Vector, col: Vector): void;
     /**
      * Another constructor of Matrix class which takes row, column, minimum and maximum values as inputs.
      * First it creates new values array with given row and column numbers. Then fills in the

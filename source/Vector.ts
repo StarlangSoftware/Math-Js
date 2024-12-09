@@ -1,28 +1,46 @@
 export class Vector {
 
     private _size: number
-    private readonly values: Array<number>
+    private values: Array<number>
+
+    constructor1(){
+        this.values = []
+        this._size = 0
+    }
+
+    constructor2(values: number[]) {
+        this.values = values
+        this._size = (<Array<number>>values).length
+    }
+
+    constructor3(size: number, initial: number) {
+        this._size = size
+        this.values = []
+        for (let i = 0; i < this._size; i++){
+            this.values.push(initial)
+        }
+    }
+
+    constructor4(size: number, initial: number, index: number) {
+        this._size = size
+        this.values = []
+        for (let i = 0; i < this._size; i++){
+            this.values.push(0.0)
+        }
+        this.values[index] = initial
+    }
 
     constructor(valuesOrSize: any = undefined, initial: any = undefined, index: any = undefined) {
         if (valuesOrSize == undefined){
-            this.values = []
-            this._size = 0
+            this.constructor1();
         } else {
             if (Array.isArray(valuesOrSize)){
-                this.values = valuesOrSize
-                this._size = (<Array<number>>valuesOrSize).length
+                this.constructor2(valuesOrSize)
             } else {
-                this._size = <number>valuesOrSize
-                this.values = []
                 if (index == undefined){
-                    for (let i = 0; i < this._size; i++){
-                        this.values.push(<number><unknown>initial)
-                    }
+                    this.constructor3(valuesOrSize, initial)
                 } else {
-                    for (let i = 0; i < this._size; i++){
-                        this.values.push(0.0)
-                    }
-                    this.values[index] = <number><unknown>initial
+                    this.constructor4(valuesOrSize, initial, index)
                 }
             }
         }

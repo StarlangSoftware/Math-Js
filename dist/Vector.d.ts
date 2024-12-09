@@ -1,6 +1,10 @@
 export declare class Vector {
     private _size;
-    private readonly values;
+    private values;
+    constructor1(): void;
+    constructor2(values: number[]): void;
+    constructor3(size: number, initial: number): void;
+    constructor4(size: number, initial: number, index: number): void;
     constructor(valuesOrSize?: any, initial?: any, index?: any);
     /**
      * The biased method creates a {@link Vector} result, add adds each item of values {@link Array} into the result Vector.

@@ -26,53 +26,73 @@
          */
         constructor(row, col, minValue, maxValue, random) {
             if (typeof row == 'number') {
-                this.row = row;
                 if (col != undefined) {
-                    this.col = col;
                     if (minValue == undefined) {
-                        this.initZeros();
+                        this.constructor2(row, col);
                     }
                     else {
                         if (maxValue == undefined) {
-                            this.initZeros();
-                            for (let i = 0; i < this.row; i++) {
-                                this.values[i][i] = minValue;
-                            }
+                            this.constructor3(row, col, minValue);
                         }
                         else {
-                            this.values = new Array();
-                            for (let i = 0; i < this.row; i++) {
-                                this.values.push(new Array());
-                                for (let j = 0; j < this.col; j++) {
-                                    if (random != undefined) {
-                                        this.values[i].push(random.nextDouble(minValue, maxValue));
-                                    }
-                                    else {
-                                        this.values[i].push(minValue + (maxValue - minValue) * Math.random());
-                                    }
-                                }
-                            }
+                            this.constructor4(row, col, minValue, maxValue, random);
                         }
                     }
                 }
                 else {
-                    this.col = row;
-                    this.initZeros();
-                    for (let i = 0; i < this.row; i++) {
-                        this.values[i][i] = 1.0;
-                    }
+                    this.constructor1(row);
                 }
             }
             else {
                 if (row instanceof Vector_1.Vector && col instanceof Vector_1.Vector) {
-                    this.row = row.size();
-                    this.col = col.size();
-                    this.initZeros();
-                    for (let i = 0; i < this.row; i++) {
-                        for (let j = 0; j < this.col; j++) {
-                            this.values[i][j] = row.getValue(i) * col.getValue(j);
-                        }
+                    this.constructor5(row, col);
+                }
+            }
+        }
+        constructor1(row) {
+            this.row = row;
+            this.col = row;
+            this.initZeros();
+            for (let i = 0; i < this.row; i++) {
+                this.values[i][i] = 1.0;
+            }
+        }
+        constructor2(row, col) {
+            this.row = row;
+            this.col = col;
+            this.initZeros();
+        }
+        constructor3(row, col, minValue) {
+            this.row = row;
+            this.col = col;
+            this.initZeros();
+            for (let i = 0; i < this.row; i++) {
+                this.values[i][i] = minValue;
+            }
+        }
+        constructor4(row, col, minValue, maxValue, random) {
+            this.row = row;
+            this.col = col;
+            this.values = new Array();
+            for (let i = 0; i < this.row; i++) {
+                this.values.push(new Array());
+                for (let j = 0; j < this.col; j++) {
+                    if (random != undefined) {
+                        this.values[i].push(random.nextDouble(minValue, maxValue));
                     }
+                    else {
+                        this.values[i].push(minValue + (maxValue - minValue) * Math.random());
+                    }
+                }
+            }
+        }
+        constructor5(row, col) {
+            this.row = row.size();
+            this.col = col.size();
+            this.initZeros();
+            for (let i = 0; i < this.row; i++) {
+                for (let j = 0; j < this.col; j++) {
+                    this.values[i][j] = row.getValue(i) * col.getValue(j);
                 }
             }
         }
