@@ -158,19 +158,18 @@ export class Matrix{
     }
 
     /**
-     * The getter for the row variable.
+     * The getter for the row vector.
      *
-     * @return row number.
+     * @return row vector.
      */
     getRowVector(row: number): Vector{
         return new Vector(this.values[row])
     }
 
     /**
-     * The getColumn method creates an {@link Array} and adds items at given column number of values {@link Array}
-     * to the {@link Array}.
+     * The getter for the column variable.
      *
-     * @return Array of given column number.
+     * @return column number.
      */
     getColumn(): number{
         return this.col
