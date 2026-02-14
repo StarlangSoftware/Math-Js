@@ -1,0 +1,5 @@
+export * from "./DiscreteDistribution";
+export * from "./Distribution";
+export * from "./Eigenvector";
+export * from "./Matrix";
+export * from "./Vector";
